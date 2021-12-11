@@ -4,7 +4,19 @@ import { Table, TableHeader, TableCell, TableBody, DataTableCell } from '@david.
 
 
 // Create Document Component
-const MyDocument = () => (
+const MyDocument = ({
+    nama, 
+    tanggalLahir, 
+    jenisKelamin, 
+    alamat, 
+    nik, 
+    pemeriksa, 
+    tanggalSampling, 
+    tanggalPeriksa,
+    jenisPemeriksaan,
+    jenisSample,
+    hasil,
+    nilaiRujukan}) => (
     <Document>
     <Page style={styles.body}>
         {/* header-wrapper */}
@@ -28,44 +40,44 @@ const MyDocument = () => (
                 <View style={styles.informationcontent}>
                     <Text style={styles.informationtextshrink}>Nama</Text>
                     <Text style={styles.informationtext}>:</Text>
-                    <Text style={styles.informationtext}>Lorem Ipsum</Text>
+                    <Text style={styles.informationtext}>{nama}</Text>
                 </View>
                 <View style={styles.informationcontent}>
                     <Text style={styles.informationtextshrink}>Tanggal Lahir</Text>
                     <Text style={styles.informationtext}>:</Text>
-                    <Text style={styles.informationtext}>Lorem Ipsum</Text>
+                    <Text style={styles.informationtext}>{tanggalLahir}</Text>
                 </View>
                 <View style={styles.informationcontent}>
                     <Text style={styles.informationtextshrink}>Jenis Kelamin</Text>
                     <Text style={styles.informationtext}>:</Text>
-                    <Text style={styles.informationtext}>Laki-laki</Text>
+                    <Text style={styles.informationtext}>{jenisKelamin}</Text>
                 </View>
                 <View style={styles.informationcontent}>
                     <Text style={styles.informationtextshrink}>Alamat</Text>
                     <Text style={styles.informationtext}>:</Text>
-                    <Text style={styles.informationtext}>Bekasi</Text>
+                    <Text style={styles.informationtext}>{alamat}</Text>
                 </View>
             </View>
             <View style={styles.informationwrapperleft}>
                 <View style={styles.informationcontent}>
                     <Text style={styles.informationtextshrink}>NIK</Text>
                     <Text style={styles.informationtext}>:</Text>
-                    <Text style={styles.informationtext}>123456789876545</Text>
+                    <Text style={styles.informationtext}>{nik}</Text>
                 </View>
                 <View style={styles.informationcontent}>
                     <Text style={styles.informationtextshrink}>Pemeriksa</Text>
                     <Text style={styles.informationtext}>:</Text>
-                    <Text style={styles.informationtext}>Lorem Ipsum</Text>
+                    <Text style={styles.informationtext}>{pemeriksa}</Text>
                 </View>
                 <View style={styles.informationcontent}>
                     <Text style={styles.informationtextshrink}>Tanggal Sampling</Text>
                     <Text style={styles.informationtext}>:</Text>
-                    <Text style={styles.informationtext}>Laki-laki</Text>
+                    <Text style={styles.informationtext}>{tanggalSampling}</Text>
                 </View>
                 <View style={styles.informationcontent}>
                     <Text style={styles.informationtextshrink}>Tanggal Periksa</Text>
                     <Text style={styles.informationtext}>:</Text>
-                    <Text style={styles.informationtextbold}>Lorem Ipsum</Text>
+                    <Text style={styles.informationtextbold}>{tanggalPeriksa}</Text>
                 </View>
             </View>
         </View>
@@ -75,10 +87,10 @@ const MyDocument = () => (
         <View style={styles.tablewrapper}>
             <Table data={[
                 {
-                    jenisPemeriksaan: "Lorem ipsum", 
-                    jenisSample: "Lorem ipsum", 
-                    hasil: 'Lorem ipsum', 
-                    nilaiRujukan: "Lorem ipsum", 
+                    jenisPemeriksaan: jenisPemeriksaan, 
+                    jenisSample: jenisSample, 
+                    hasil: hasil, 
+                    nilaiRujukan: nilaiRujukan, 
                 }
             ]}>
                 <TableHeader textAlign={"center"}>
